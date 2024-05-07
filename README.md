@@ -64,7 +64,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-   <a href="https://github.com/othneildrew/Best-README-Template">
+   <a href="#">
     <img src="images/logo.png">
   </a> 
 
