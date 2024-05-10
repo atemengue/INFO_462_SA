@@ -1,4 +1,4 @@
-<h1 align="center">Architecture logicielle - Groupe 8</h1> <p align="center"> <img src="https://github.com/your-username/your-repo/blob/main/logo.png" alt="Logo" width="200"> </p>
+<h1 align="center">Architecture logicielle - Groupe 8</h1> <p align="center"> <img src="images/logo.png" alt="Logo" width="200"> </p>
 Présentation
 
 Ce projet est une application distribuée composée de plusieurs microservices. Il permet de créer, modérer et afficher des posts avec leurs commentaires.
@@ -17,8 +17,7 @@ Chaque service est conteneurisé avec Docker et peut être déployé indépendam
 Configuration Docker
 Voici la configuration Docker Compose pour déployer l'ensemble de l'application :
 
-yaml
-Copier
+
 version: '3'
 services:
   comments:
@@ -65,19 +64,16 @@ Voici quelques commandes Docker utiles pour gérer les microservices :
 
 <details> <summary style="color: blue; font-weight: bold;">Commandes Docker</summary>
 Lancer un seul service (par exemple, posts) :
-sql
-Copier
+
 docker-compose start posts
 Arrêter un service sans arrêter les autres :
-arduino
-Copier
+
 docker-compose stop posts
 Relancer une nouvelle version sans arrêter les conteneurs en cours d'exécution :
-css
-Copier
+
 docker-compose up -d --force-recreate
 Arrêter tous les conteneurs :
-Copier
+
 docker-compose down
 </details>
 Adressage des applications
