@@ -1,0 +1,77 @@
+version : "3.8"
+
+services:
+  comments:
+    container_name: comments
+    restart: always
+    image: comments
+    ports:
+      - "4001:4001"
+    build:
+      context: ./comments
+      dockerfile: Dockerfile
+    depends_on: 
+      - event-bus
+    networks:
+      - network1
+
+  event-bus:
+    container_name: event-bus
+    restart: always
+    image: event-bus
+    ports:
+      - "4005:4005"
+    build:
+      context: ./event-bus
+      dockerfile: Dockerfile
+    networks:
+      - network1
+
+
+  moderation:
+    container_name: moderation
+    restart: always
+    image: moderation
+    ports:
+      - "4003:4003"
+    build:
+      context: ./moderation
+      dockerfile: Dockerfile
+    depends_on: 
+      - event-bus
+    networks:
+      - network1
+
+
+  posts:
+    container_name: posts
+    restart: always
+    image: posts
+    ports:
+      - "4000:4000"
+    build:
+      context: ./posts
+      dockerfile: Dockerfile
+    depends_on: 
+      - event-bus
+    networks:
+      - network1
+
+      
+  query:
+    container_name: query
+    restart: always
+    image: query
+    ports:
+      - "4002:4002"
+    build:
+      context: ./query
+      dockerfile: Dockerfile
+    depends_on: 
+      - event-bus
+    networks:
+      - network1
+
+
+networks:
+  network1:
