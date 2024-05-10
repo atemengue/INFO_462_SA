@@ -1,0 +1,40 @@
+version: "3.8"
+services: 
+  client:
+    container_name: client_container
+    image: client_img
+    build: ./client
+    ports:
+      - "3000:3000"  # Assuming React client runs on port 3000
+  comments:
+    container_name: comments_container
+    image: comments_img
+    build: ./comments
+    ports:
+      - "4001:4001"  # Replace with your comment service port
+  event-bus:
+    container_name: eventbus_container
+    image: eventbus_img
+    build: ./event-bus
+    ports:
+      - "4005:4005"  # Replace with your event bus port
+  moderation:
+    container_name: moderation_container
+    image: moderation_img
+    build: ./moderation
+    ports:
+      - "4003:4003"  # Replace with your moderation service port
+  posts:
+    container_name: posts_container
+    image: posts_img
+    build: ./posts
+    ports:
+      - "4000:4000"  # Replace with your posts service port
+  query:
+    container_name: query_container
+    image: query_img
+    build: ./query
+    ports:
+      - "4002:4002"  # Replace with your query service port
+volumes: 
+  tp_blog: {}
