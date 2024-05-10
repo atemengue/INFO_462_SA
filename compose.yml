@@ -1,0 +1,85 @@
+version : "2"
+
+services:
+  comments:
+    container_name: comments
+    pull_policy: never
+    restart: always
+    image: comments
+    ports:
+      - "4001:4001"
+    build:
+      context: ./comments
+      dockerfile: Dockerfile
+    depends_on: 
+      - event-bus
+    networks:
+      - my-network
+
+  event-bus:
+    container_name: event-bus
+    restart: always
+    pull_policy: never
+    image: event-bus
+    ports:
+      - "4005:4005"
+    build:
+      context: ./event-bus
+      dockerfile: Dockerfile
+    networks:
+      - my-network
+
+
+  moderation:
+    container_name: moderation
+    restart: always
+    pull_policy: never
+    image: moderation
+    ports:
+      - "4003:4003"
+    build:
+      context: ./moderation
+      dockerfile: Dockerfile
+    depends_on: 
+      - event-bus
+    networks:
+      - my-network
+
+
+  posts:
+    container_name: posts
+    restart: always
+    pull_policy: never
+    image: posts
+    ports:
+      - "4000:4000"
+    build:
+      context: ./posts
+      dockerfile: Dockerfile
+    depends_on: 
+      - event-bus
+    networks:
+      - my-network
+
+      
+  query:
+    container_name: query
+    restart: always
+    pull_policy: never
+    image: query
+    ports:
+      - "4002:4002"
+    build:
+      context: ./query
+      dockerfile: Dockerfile
+    depends_on: 
+      - event-bus
+      - comments
+      - posts
+      - moderation
+    networks:
+      - my-network
+
+
+networks:
+  my-network:
