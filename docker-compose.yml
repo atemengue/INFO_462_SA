@@ -1,0 +1,50 @@
+version: '3'
+services:
+
+  client:
+    build: ./client
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/client-1
+    command: npm start
+
+  comments:
+    build: ./comments
+    ports:
+      - "4001:4001"
+    volumes:
+      - .:/comments-1
+    command: npm start
+  
+  event-bus:
+    build: ./event-bus
+    ports:
+      - "4002:4002"
+    volumes:
+      - .:/event-bus-1
+    command: npm start
+
+  moderation:
+    build: ./moderation
+    ports:
+      - "4003:4003"
+    volumes:
+      - .:/moderation-1
+    command: npm start  
+
+  posts:
+    build: ./posts
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/posts-1
+    command: npm start 
+
+  query:
+    build: ./query
+    ports:
+      - "4005:4005"
+    volumes:
+      - .:/query-1
+    command: npm start    
