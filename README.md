@@ -178,10 +178,13 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+-->
+- NOTHING
+<!--  -->
+
+<!-- LICENSE --> 
 
 
-
-LICENSE -->
 ## License
 
  Distributed under the MIT License. See `LICENSE.txt` for more information.
@@ -215,7 +218,12 @@ Your Name - [@FranckJudes](https://twitter.com/FranckJudes)
 * [React Icons](https://react-icons.github.io/react-icons/search)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+Nous tenons à exprimer notre gratitude envers les personnes et organisations suivantes qui ont contribué de différentes manières à ce projet :
 
+- INNOCENTS NJIEMOUN JUDE FRANCK 20V2436
+- BIRAMAH IRAM ADOUM NOUBA
+- AMBASSIRA AMBASSIRA RAYAN CYAN
+- MVONDO FRANCIS 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
