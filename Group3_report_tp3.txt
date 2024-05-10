@@ -1,0 +1,94 @@
+
+
+
+
+
+
+
+
+REPUBLIQUE DU CAMEROUN
+Paix – Travail – Patrie
+- . - . - . -
+UNIVERSITÉ DE YAOUNDÉ I
+Faculté des Sciences
+Département d'Informatique
+B.P. 812 Yaoundé	
+REPUBLIC OF CAMEROON
+Peace – Work – Fatherland
+- . - . - . -
+UNIVERSITY OF YAOUNDÉ I
+Faculté des Sciences
+Department of Computer Science
+P.O.Box 812 Yaoundé
+
+		
+SOFTWARE ARCHITECTURE GROUP 3: 
+Matriculation Number 	Name
+20V2027	Djiomene Achininui Wouabo Cynthia
+22W2287	TAGNE MOPO Hilaire
+20U2697	NWAMOU MBIANGA DIMITRI
+23V2852	ADJI BAKETE Durand Jackson
+
+
+
+Contents
+SOFTWARE ARCHITECTURE GROUP 3:	1
+Introduction	2
+Microservice Architecture	2
+Dockerization Process	2
+Backend Service (Node.js)	2
+Deployment Considerations	4
+Conclusion	4
+
+
+
+Report on Docker Container Deployment for a Mini Blog Application
+Introduction
+The development of a mini blog application using Node.js for the backend has been successfully completed. This report outlines the deployment process using Docker containers, emphasizing the transition from a development environment to a production-ready setup. The application is structured using a microservice architecture, enhancing modularity and scalability.
+Microservice Architecture
+The application is divided into two main services: a React frontend service and a Node.js backend service. This microservice architecture allows for independent development, deployment, and scaling of each service, improving the overall maintainability and flexibility of the application.
+Dockerization Process
+Backend Service (Node.js)
+1.	Dockerfile Creation: A Dockerfile was created in the root directory of the backend service. This file contains instructions for building a Docker image of the Node.js application.
+# Use an official Node.js runtime as the base image
+FROM node:14
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json
+COPY package*.json./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY..
+
+# Expose the port the app runs on
+EXPOSE 8080
+
+# Define the command to run the app
+CMD [ "npm", "start" ]
+
+
+2.	Building the Docker Image: The Docker image for the backend service was built using the command docker build -t image
+() which is the name of the image we created..
+3.	Running the Docker Container: The Docker container for the backend service was started with docker run -p 4005:4005backend-service.
+Frontend Service (React)
+1.	Dockerfile Creation: Similar to the backend, a Dockerfile was created for the React frontend service, specifying the base image, working directory, and instructions for copying the application code and installing dependencies.
+2.	Building and Running the Docker Container: The Docker image for the frontend service was built and run using commands similar to those for the backend service, with adjustments for the specific port and service name.
+3.	Easy to guide :
+4.	When I am in the tp-blog I open the terminal 
+I type the command: sudo docker-compose up // this command will start my server 
+Then I open the client folder 
+I open my terminal 
+I type the command: npm start // this command starts the program on the browser
+
+Deployment Considerations
+The deployment process highlighted the importance of abstracting the application's execution environment from the underlying system. By using Docker containers, the application can be easily deployed on any system with Docker installed, without requiring specific knowledge of the host environment or the need to manually configure the application's startup command (npm start).
+Conclusion
+The deployment of the mini blog application using Docker containers has demonstrated the effectiveness of Docker in creating a consistent and reproducible environment for both development and production. The microservice architecture, combined with Docker, has provided a scalable and modular solution, facilitating easier maintenance and updates to the application. This approach has significantly reduced the complexity of deploying the application, making it more accessible for future development and scaling efforts.
+________________________________________
+This report provides a concise overview of the deployment process for a mini blog application using Docker containers, emphasizing the benefits of Docker and the microservice architecture in creating a robust and scalable application
+
