@@ -108,27 +108,27 @@ To get a local copy up and running follow these simple example steps. -->
   ```sh
   npm install npm@latest -g
   ``` -->
+#####  Docker 
+#####  Docker 
+#####  Docker 
 
 ### Installation
 
-<!-- _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+ 
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/atemengue/INFO_462_SA/tree/tp1_groupe9_info462
    ```
-3. Install NPM packages
+2. Install 
    ```sh
-   npm install
+    sudo docker-compose up
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
- -->
+ 
 
 
 <!-- USAGE EXAMPLES -->
@@ -180,22 +180,21 @@ Don't forget to give the project a star! Thanks again!
 LICENSE -->
 ## License
 
-<!-- Distributed under the MIT License. See `LICENSE.txt` for more information.
+ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
- -->
+ 
 
 <!-- CONTACT -->
 ## Contact
 
-<!-- Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Your Name - [@FranckJudes](https://twitter.com/FranckJudes) 
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
- -->
+
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
