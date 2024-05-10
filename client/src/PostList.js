@@ -7,12 +7,19 @@ const PostList = () => {
   const [posts, setPosts] = useState({});
 
   const fetchPosts = async () => {
-    const res = await axios.get("http://localhost:4002/posts");
+    try {
+      // Envoie une requête GET vers le service qui récupère la liste des posts
+      const res = await axios.get(`${process.env.REACT_APP_QUERY_SERVICE_URL}/posts`);
 
-    setPosts(res.data);
+      // Met à jour l'état local avec les données récupérées
+      setPosts(res.data);
+    } catch (error) {
+      console.error("Error fetching posts:", error.message);
+    }
   };
 
   useEffect(() => {
+    // Appel fetchPosts une seule fois lors du montage du composant
     fetchPosts();
   }, []);
 

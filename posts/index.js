@@ -8,6 +8,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+const PORT = 4000;
+const EVENT_BUS_URL = process.env.EVENTS_SERVICE_URL || "http://localhost:4005";
+
 const posts = {};
 
 app.get("/posts", (req, res) => {
@@ -23,7 +26,7 @@ app.post("/posts", async (req, res) => {
     title,
   };
 
-  await axios.post("http://localhost:4005/events", {
+  await axios.post(`${EVENT_BUS_URL}/events`, {
     type: "PostCreated",
     data: {
       id,
@@ -40,6 +43,6 @@ app.post("/events", (req, res) => {
   res.send({});
 });
 
-app.listen(4000, () => {
-  console.log("Listening on 4000");
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });

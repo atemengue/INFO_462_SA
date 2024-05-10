@@ -8,6 +8,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+const PORT = 4001;
+const EVENTS_SERVICE_URL = process.env.EVENTS_SERVICE_URL || 'http://localhost:4005';
+
 const commentsByPostId = {};
 
 app.get("/posts/:id/comments", (req, res) => {
@@ -24,7 +27,8 @@ app.post("/posts/:id/comments", async (req, res) => {
 
   commentsByPostId[req.params.id] = comments;
 
-  await axios.post("http://localhost:4005/events", {
+  // Envoie un événement CommentCreated avec le nouveau commentaire
+  await axios.post(`${EVENTS_SERVICE_URL}/events`, {
     type: "CommentCreated",
     data: {
       id: commentId,
@@ -51,7 +55,8 @@ app.post("/events", async (req, res) => {
     });
     comment.status = status;
 
-    await axios.post("http://localhost:4005/events", {
+    // Envoie un événement CommentUpdated après la modération du commentaire
+    await axios.post(`${EVENTS_SERVICE_URL}/events`, {
       type: "CommentUpdated",
       data: {
         id,
@@ -65,6 +70,6 @@ app.post("/events", async (req, res) => {
   res.send({});
 });
 
-app.listen(4001, () => {
-  console.log("Listening on 4001");
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });

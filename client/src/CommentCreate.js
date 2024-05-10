@@ -7,11 +7,17 @@ const CommentCreate = ({ postId }) => {
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    await axios.post(`http://localhost:4001/posts/${postId}/comments`, {
-      content,
-    });
+    try {
+      // Envoie une requête POST vers le service de création de commentaires pour un post spécifique
+      await axios.post(`${process.env.REACT_APP_COMMENTS_SERVICE_URL}/posts/${postId}/comments`, {
+        content,
+      });
 
-    setContent("");
+      // Réinitialise le champ de contenu après la soumission
+      setContent("");
+    } catch (error) {
+      console.error("Error submitting comment:", error.message);
+    }
   };
 
   return (

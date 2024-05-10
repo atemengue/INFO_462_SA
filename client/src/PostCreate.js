@@ -7,11 +7,17 @@ const PostCreate = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    await axios.post("http://localhost:4000/posts", {
-      title,
-    });
+    try {
+      // Envoie une requête POST vers le service de création de posts
+      await axios.post(`${process.env.REACT_APP_POSTS_SERVICE_URL}/posts`, {
+        title,
+      });
 
-    setTitle("");
+      // Réinitialise le champ de titre après la soumission
+      setTitle("");
+    } catch (error) {
+      console.error("Error submitting post:", error.message);
+    }
   };
 
   return (

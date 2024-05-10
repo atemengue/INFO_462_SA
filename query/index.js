@@ -31,8 +31,10 @@ const handleEvent = (type, data) => {
       return comment.id === id;
     });
 
-    comment.status = status;
-    comment.content = content;
+    if (comment) {
+      comment.status = status;
+      comment.content = content;
+    }
   }
 };
 
@@ -48,10 +50,13 @@ app.post("/events", (req, res) => {
   res.send({});
 });
 
-app.listen(4002, async () => {
-  console.log("Listening on 4002");
+const PORT = 4002;
+
+app.listen(PORT, async () => {
+  console.log(`Listening on port ${PORT}`);
+  
   try {
-    const res = await axios.get("http://localhost:4005/events");
+    const res = await axios.get(`${process.env.EVENTS_SERVICE_URL}/events`);
 
     for (let event of res.data) {
       console.log("Processing event:", event.type);
