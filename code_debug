@@ -1,0 +1,5 @@
+sudo npm install -g npm@latest
+rm package-lock.json
+npm update
+npm update
+
