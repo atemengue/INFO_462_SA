@@ -68,20 +68,29 @@ Voici quelques commandes Docker utiles pour gérer les microservices :
 Lancer un seul service (par exemple, posts) :
 
 
-docker-compose start posts
+<h3 style="color: green; font-weight: bold;">docker-compose start posts</h3>
+
+
 Arrêter un service sans arrêter les autres :
 
 
-docker-compose stop posts
+<h3 style="color: green; font-weight: bold;">docker-compose stop posts</h3>
+
+
 Relancer une nouvelle version sans arrêter les conteneurs en cours d'exécution :
 
 
-docker-compose up -d --force-recreate
+<h3 style="color: green; font-weight: bold;">docker-compose up -d --force-recreate</h3>
+
+
 Arrêter tous les conteneurs :
 
-docker-compose down
+
+<h3 style="color: green; font-weight: bold;">docker-compose down</h3>
 </details>
-Adressage des applications
+<h3 style="color: green; font-weight: bold;">Adressage des applications</h3>
+
+
 Lors du déploiement des applications dans des conteneurs, l'utilisation de "localhost" dans les liens d'API n'est plus appropriée. Chaque conteneur a sa propre adresse IP et son propre environnement, ce qui signifie que les liens "localhost" ne fonctionneront pas de manière fiable entre les différents composants de l'application.
 
 Pour résoudre ce problème, les liens d'accès aux API sont définis dans des variables d'environnement. Cela permet de découpler le code du lien d'accès spécifique et de rendre l'application plus flexible et facile à maintenir.
