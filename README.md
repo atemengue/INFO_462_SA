@@ -1,9 +1,9 @@
-<h1 align="center">Architecture logicielle - Groupe 8</h1> <p align="center"> <img src="images/logo.png" alt="Logo" width="200"> </p>
+<h1 align="center" style="color: green; font-weight: bold;">Architecture logicielle - Groupe 8</h1> <p align="center" style="background-color: green; padding: 20px;"> <img src="images/logo.png" alt="Logo" width="200" style="border-radius: 50%;"> </p>
 Présentation
-
 Ce projet est une application distribuée composée de plusieurs microservices. Il permet de créer, modérer et afficher des posts avec leurs commentaires.
 
 Architecture
+<h3 style="color: green; font-weight: bold;">Architecture</h3>
 L'application est constituée des microservices suivants :
 
 Client : Interface web pour interagir avec l'application.
@@ -15,6 +15,7 @@ Moderation : Service chargé de la modération des commentaires.
 Chaque service est conteneurisé avec Docker et peut être déployé indépendamment.
 
 Configuration Docker
+<h3 style="color: green; font-weight: bold;">Configuration Docker</h3>
 Voici la configuration Docker Compose pour déployer l'ensemble de l'application :
 
 
@@ -60,16 +61,20 @@ services:
     ports:
       - "3000:3000"
 Commandes Docker
+<h3 style="color: green; font-weight: bold;">Commandes Docker</h3>
 Voici quelques commandes Docker utiles pour gérer les microservices :
 
-<details> <summary style="color: blue; font-weight: bold;">Commandes Docker</summary>
+<details> <summary style="color: green; font-weight: bold;">Commandes Docker</summary>
 Lancer un seul service (par exemple, posts) :
+
 
 docker-compose start posts
 Arrêter un service sans arrêter les autres :
 
+
 docker-compose stop posts
 Relancer une nouvelle version sans arrêter les conteneurs en cours d'exécution :
+
 
 docker-compose up -d --force-recreate
 Arrêter tous les conteneurs :
@@ -82,18 +87,18 @@ Lors du déploiement des applications dans des conteneurs, l'utilisation de "loc
 Pour résoudre ce problème, les liens d'accès aux API sont définis dans des variables d'environnement. Cela permet de découpler le code du lien d'accès spécifique et de rendre l'application plus flexible et facile à maintenir.
 
 Problème rencontré et solution
-<details> <summary style="color: blue; font-weight: bold;">Problème et solution</summary>
+<h3 style="color: green; font-weight: bold;">Problème et solution</h3>
 Un problème a été rencontré avec le service "Query" qui renvoyait toujours une liste vide au lieu des posts et commentaires qui avaient été créés. Cela était dû au fait que les événements n'étaient chargés qu'au démarrage du service, et que tout événement créé après le démarrage n'était pas pris en compte.
 
 La solution a été de recharger les événements avant de renvoyer les posts, afin que la variable "posts" soit correctement remplie.
 
-</details>
 Déploiement
+<h3 style="color: green; font-weight: bold;">Déploiement</h3>
 Pour déployer l'application, suivez les étapes suivantes :
 
 Clonez le dépôt Git.
-Construisez les images Docker avec la commande **docker-compose build**.
-Démarrez les conteneurs avec la commande **docker-compose up -d**.
+Construisez les images Docker avec la commande docker-compose build.
+Démarrez les conteneurs avec la commande docker-compose up -d.
 Une fois que tous les conteneurs sont lancés, vous pourrez accéder à chaque application aux adresses suivantes :
 
 Comments : http://localhost:4001
