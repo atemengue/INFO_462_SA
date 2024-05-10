@@ -108,9 +108,10 @@ To get a local copy up and running follow these simple example steps. -->
   ```sh
   npm install npm@latest -g
   ``` -->
-#####  Docker 
-#####  Docker 
-#####  Docker 
+- ```Node.js et npm```
+-  ``` Docker ```
+-  ``` Éditeur de texte ou IDE ```
+-  ``` Navigateur Web  ```
 
 ### Installation
 
@@ -118,13 +119,17 @@ _Below is an example of how you can instruct your audience on installing and set
 
  
 1. Clone the repo
-   ```sh
+   ```sh 
    git clone https://github.com/atemengue/INFO_462_SA/tree/tp1_groupe9_info462
    ```
-2. Install 
+2. Se deplacer dans le repertoire : 
    ```sh
     sudo docker-compose up
    ```
+3. Configurer les variables d'environnement :
+``` Créez un fichier .env à la racine de votre projet et définissez toutes les variables d'environnement nécessaires. ```
+3. Lancer les services Docker :
+   Si vous utilisez Docker pour gérer vos services, assurez-vous que Docker est en cours d'exécution sur votre système, puis exécutez ```docker-compose up``` dans le répertoire où se trouve votre fichier docker-compose.yml. Cela démarrera tous les services définis dans votre composition Docker
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -140,9 +145,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 ROADMAP -->
+- Acceder par lien http://localhost:3000
 ## Roadmap
 
 <!-- - [x] Add Changelog
