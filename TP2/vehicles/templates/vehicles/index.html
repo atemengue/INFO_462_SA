@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>{{ vehicle.model }}</h2>
+   <p>l'année : {{vehicle.year}}</p>
+   <p>rentalPrice: {{vehicle.rentalPrice}}</p>
+   <p>registrationNumber  : {{vehicle.registrationNumber}}</p>
+   <p> <a href="{% url 'show'  %}">revenir à liste </a></p>
+</body>
+</html>
