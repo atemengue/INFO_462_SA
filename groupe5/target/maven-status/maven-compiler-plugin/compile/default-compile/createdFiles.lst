@@ -1,6 +1,0 @@
-com\ApiVehicule\groupe5\Controller\VehiculeController.class
-com\ApiVehicule\groupe5\Entity\Vehicule.class
-com\ApiVehicule\groupe5\Repository\VehiculeRepository.class
-com\ApiVehicule\groupe5\Service\VehiculeServiceImpl.class
-com\ApiVehicule\groupe5\Service\VehiculeService.class
-com\ApiVehicule\groupe5\Groupe5Application.class
