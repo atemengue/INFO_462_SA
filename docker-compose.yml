@@ -1,0 +1,10 @@
+version: '3'
+services:
+
+  client:
+    build: ./api
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/vehicles
+    command: npm start
