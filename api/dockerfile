@@ -1,0 +1,20 @@
+FROM node:18-alpine
+
+RUN npm install -g Express nodemon
+
+
+WORKDIR /api
+
+
+COPY package.json package-lock.json ./
+
+#Installing all the tools and dependencies in the container
+RUN npm install
+
+COPY . .
+
+
+EXPOSE 4000
+
+#Command to start the Docker container for the backed server application
+CMD ["npm", "start"]

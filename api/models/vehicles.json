@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "RegistrationNumber": "ABC123",
+    "brand": "Toyota",
+    "model": "Camry",
+    "year": 2022,
+    "rentalPrice": 50
+  },
+  {
+    "id": 2,
+    "RegistrationNumber": "ABC124",
+    "brand": "Honda",
+    "model": "Civic",
+    "year": 2021,
+    "rentalPrice": 50
+  },
+  {
+    "RegistrationNumber": "ABC124",
+    "brand": "Toyo",
+    "model": "Camry3",
+    "year": 2028,
+    "rentalPrice": 500,
+    "id": 3
+  }
+]
