@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404,redirect
-
+from django.contrib.auth.decorators import login_required
+from user.decorators import admin_required, user_required
 # Create your views here.
 from django.http import JsonResponse
 from .models import Vehicle
@@ -7,12 +8,15 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from .forms import VehicleForm
 
+@login_required
+@user_required
 def show(request):
     
         data = {'vehicles': Vehicle.objects.all()}
         return render(request,"vehicles/show.html", data)
 
-
+@login_required
+@admin_required
 def get_vehicle(request, vehicle_id):
     
         vehicle = Vehicle.objects.all()
@@ -23,6 +27,8 @@ def get_vehicle(request, vehicle_id):
 # d
 
 # Dans votre fichier views.py
+@login_required
+@admin_required
 def create_vehicle(request):
     if request.method == 'POST':
         form = VehicleForm(request.POST)
@@ -49,7 +55,8 @@ def create_vehicle(request):
 #     else:
 #         return JsonResponse({'error': 'Method not allowed'}, status=405)
     
-
+@login_required
+@admin_required
 @csrf_exempt
 def update_vehicle(request, vehicle_id):
     vehicle = Vehicle.objects.get(pk = vehicle_id)
@@ -63,7 +70,8 @@ def update_vehicle(request, vehicle_id):
     return render(request, "vehicles/ajout.html", {"form": form}) 
     
 
-
+@login_required
+@admin_required
 def delete_vehicle(request, vehicle_id):
     
         vehicle = Vehicle.objects.get(pk = vehicle_id)

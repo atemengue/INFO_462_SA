@@ -85,9 +85,11 @@
                             
                         </td>
                         <td>
-                            <a href="{% url 'create_vehicle' %}">Ajouter</a> | 
-                            <a href="{% url 'delete_vehicle' vehicle.id %}">Supprimer</a> |
-                            <a href="{% url 'update_vehicle' vehicle.id %}">modifier</a>
+                            {% if user.role == 'admin' %}
+                                 <a href="{% url 'create_vehicle' %}">Ajouter</a> | 
+                                 <a href="{% url 'delete_vehicle' vehicle.id %}">Supprimer</a> |
+                                 <a href="{% url 'update_vehicle' vehicle.id %}">modifier</a>
+                            {% endif %}
                         </td>
                     </tr>
                     {% endfor %}
