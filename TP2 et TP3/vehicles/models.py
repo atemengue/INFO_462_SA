@@ -9,4 +9,4 @@ class Vehicle(models.Model):
     year = models.IntegerField()
     rentalPrice = models.IntegerField()
     registrationNumber = models.CharField(max_length=100)
-    # Ajoutez d'autres champs selon vos besoins
+    
