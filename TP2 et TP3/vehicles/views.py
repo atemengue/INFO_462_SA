@@ -79,16 +79,16 @@ def delete_vehicle(request, vehicle_id):
         return redirect('show')
     
     
-def search_by_registration(request, registration_number):
-    try:
-        vehicle = Vehicle.objects.get(registration_number=registration_number)
-        data = {'vehicle': model_to_dict(vehicle)}
-        return JsonResponse(data)
-    except Vehicle.DoesNotExist:
-        return JsonResponse({'error': 'Vehicle not found'}, status=404)
+# def search_by_registration(request, registration_number):
+#     try:
+#         vehicle = Vehicle.objects.get(registration_number=registration_number)
+#         data = {'vehicle': model_to_dict(vehicle)}
+#         return JsonResponse(data)
+#     except Vehicle.DoesNotExist:
+#         return JsonResponse({'error': 'Vehicle not found'}, status=404)
     
 
-def search_by_price(request, max_price):
-    vehicles = Vehicle.objects.filter(price__lte=max_price)
-    data = {'vehicles': list(vehicles.values())}
-    return JsonResponse(data)
+# def search_by_price(request, max_price):
+#     vehicles = Vehicle.objects.filter(price__lte=max_price)
+#     data = {'vehicles': list(vehicles.values())}
+#     return JsonResponse(data)
