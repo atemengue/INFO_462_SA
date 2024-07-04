@@ -1,0 +1,4 @@
+bonjour monsieur, dans ce projet c'est unique l'admin qui est capable de gérer les utilisateurs
+et véhicules (CRUD) veuillez svp à créer un utilisateur et un véhicule. mais j'ai déja inseré ces donnéés.
+nom_admin : admin
+password : admin 

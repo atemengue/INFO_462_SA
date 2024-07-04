@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr"> <!-- Remplacez 'en' par 'fr' si votre contenu est en français -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du véhicule</title> <!-- Titre plus descriptif -->
+    <!-- Ajout de CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Exemple de style CSS pour le corps */
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            color: #333; /* Couleur de texte */
+        }
+        .details {
+            margin-top: 10px; /* Marge supplémentaire pour les détails */
+        }
+        .back-link {
+            display: block; /* Affichage de bloc pour le lien de retour */
+            margin-top: 20px;
+            text-decoration: none;
+            color: blue; /* Couleur du lien */
+        }
+        .back-link:hover {
+            text-decoration: underline; /* Soulignement au survol */
+        }
+    </style>
+</head>
+<body>
+    <h2>{{ vehicle.model }}</h2>
+    <div class="details">
+        <p><strong>Année :</strong> {{ vehicle.year }}</p> <!-- Utilisation de balises strong pour la sémantique -->
+        <p><strong>Prix de location :</strong> {{ vehicle.rentalPrice }}</p>
+        <p><strong>Numéro d'immatriculation :</strong> {{ vehicle.registrationNumber }}</p>
+    </div>
+    <a class="back-link" href="{% url 'show' %}">&lt; Revenir à la liste des véhicules</a> <!-- Lien de retour avec texte explicite -->
+</body>
+</html>
