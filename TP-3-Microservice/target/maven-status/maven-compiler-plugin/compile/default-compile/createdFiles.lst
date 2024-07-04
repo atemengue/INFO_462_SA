@@ -1,0 +1,8 @@
+user/api/Controller/UserController.class
+user/api/JwtAuthorizationFilter.class
+user/api/Tp3MicroserviceApplication.class
+user/api/Entities/User.class
+user/api/Services/UserService.class
+user/api/JwtAuthenticationFilter.class
+user/api/SecurityConfig.class
+user/api/Repository/UserRepository.class

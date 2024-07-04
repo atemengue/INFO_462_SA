@@ -1,0 +1,9 @@
+/home/abdelaziz/Documents/workspace-spring-tool-suite-4-4.23.1.RELEASE/Projets/TP-3-Microservice/src/main/java/user/api/JwtUtil.java
+/home/abdelaziz/Documents/workspace-spring-tool-suite-4-4.23.1.RELEASE/Projets/TP-3-Microservice/src/main/java/user/api/JwtAuthorizationFilter.java
+/home/abdelaziz/Documents/workspace-spring-tool-suite-4-4.23.1.RELEASE/Projets/TP-3-Microservice/src/main/java/user/api/SecurityConfig.java
+/home/abdelaziz/Documents/workspace-spring-tool-suite-4-4.23.1.RELEASE/Projets/TP-3-Microservice/src/main/java/user/api/Controller/UserController.java
+/home/abdelaziz/Documents/workspace-spring-tool-suite-4-4.23.1.RELEASE/Projets/TP-3-Microservice/src/main/java/user/api/Tp3MicroserviceApplication.java
+/home/abdelaziz/Documents/workspace-spring-tool-suite-4-4.23.1.RELEASE/Projets/TP-3-Microservice/src/main/java/user/api/Entities/User.java
+/home/abdelaziz/Documents/workspace-spring-tool-suite-4-4.23.1.RELEASE/Projets/TP-3-Microservice/src/main/java/user/api/JwtAuthenticationFilter.java
+/home/abdelaziz/Documents/workspace-spring-tool-suite-4-4.23.1.RELEASE/Projets/TP-3-Microservice/src/main/java/user/api/Repository/UserRepository.java
+/home/abdelaziz/Documents/workspace-spring-tool-suite-4-4.23.1.RELEASE/Projets/TP-3-Microservice/src/main/java/user/api/Services/UserService.java
