@@ -1,0 +1,38 @@
+version: '3'
+services:
+  users:
+    image: users-service:latest
+    build:
+      context: ./users
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    networks:
+      - microservices-net
+
+  vehicule:
+    image: vehicule-service:latest
+    build:
+      context: ./vehicule
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    networks:
+      - microservices-net
+
+  apigateway:
+    image: apigateway-service:latest
+    build:
+      context: ./apigateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - microservices-net
+    depends_on:
+      - users
+      - vehicule
+
+networks:
+  microservices-net:
+    driver: bridge
