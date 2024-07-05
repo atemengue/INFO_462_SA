@@ -1,0 +1,2 @@
+Client -> API Gateway -> [ User Management Service ] -> User Database
+                        -> [ Vehicle Service ] -> Vehicle Database
