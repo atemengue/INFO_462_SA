@@ -1,0 +1,69 @@
+version:  "2"
+services:
+  vehicle:
+    image: vehicle
+    # pull_policy: if_not_present
+    pull_policy: never
+
+    build: 
+      context: ./vehicle
+      dockerfile: Dockerfile
+    container_name: vehicle
+    depends_on: 
+      - dbvehicle
+      - gateway
+    ports:
+      - "4000:4000" 
+    networks:
+      - mynet
+  userauth:
+    image: userauth
+    # pull_policy: if_not_present
+    pull_policy: never
+
+    build: 
+      context: ./auth-authorisation
+      dockerfile: Dockerfile
+    container_name: userauth
+    depends_on: 
+      - gateway
+      - dbuser
+    ports:
+      - "4001:4001" 
+    networks:
+      - mynet
+  gateway:
+    image: gateway
+    # pull_policy: if_not_present
+    pull_policy: never
+
+    build: 
+      context: ./apigateway
+      dockerfile: Dockerfile
+    container_name: gateway
+    ports:
+      - "8080:8080" 
+    networks:
+      - mynet
+  dbvehicle:
+    image: mongo
+    # pull_policy: if_not_present
+    pull_policy: never
+    container_name: dbvehicle
+    ports:
+      - "27017:27017"
+    networks:
+      - mynet
+  dbuser:
+    image: mongo
+    # pull_policy: if_not_present
+    pull_policy: never
+
+    container_name: dbuser
+    ports:
+      - "27018:27017"
+    networks:
+      - mynet
+
+networks:
+  mynet:
