@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+
+  user-service:
+    build:
+      context: ./micro-services/user-service
+      dockerfile: Dockerfile
+    ports:
+      - '3001:3001'
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/user_management
+      - JWT_SECRET=your_jwt_secret
+      - JWT_REFRESH_SECRET=your_jwt_refresh_secret
+    depends_on:
+      - mongodb
+
+  vehicle-service:
+    build:
+      context: ./micro-services/vehicle-service
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/vehicle_management
+    depends_on:
+      - mongodb
+
+  api-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    environment:
+      - USER_SERVICE_URL=http://api-gateway-user-service-1:3001/api/users
+      - VEHICLE_SERVICE_URL=http://api-gateway-vehicle-service-1:3000/api/vehicles
+      - JWT_SECRET=your_jwt_secret
+    depends_on:
+      - user-service
+      - vehicle-service
+
+volumes:
+  mongo-data:
